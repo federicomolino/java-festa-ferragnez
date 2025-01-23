@@ -9,7 +9,7 @@ public class CheckGuest {
         System.out.print("Inserisci il tuo nome per poter entrare alla festa: ");
         String nome = scan.nextLine();
         
-        for (int i = 0; i < invitati.length; i++) {
+        /*for (int i = 0; i < invitati.length; i++) {
             //Verifico se nella posizione in cui si trova il nome nell'array è uguale a quanto inserito dall'utente
             if (invitati[i].equals(nome)) {
                 System.out.println("Ciao " + nome +", puoi entrare");
@@ -17,6 +17,24 @@ public class CheckGuest {
                 System.out.println("Ciao " + nome +", mi dispiace ma il tuo nome non è in lista");
                 break;
             }
+        }*/
+
+        int i = 0;
+        boolean trovato = false;
+
+        //controllo tutti gli elementi dell'array
+        while (i < invitati.length) {
+            //Verifico se quanto scritto dall'utente è nell'array
+            if (invitati[i].equals(nome)) {
+             trovato = true;
+            }
+            i++;
+        }
+
+        if (trovato) {
+            System.out.println("Ciao " + nome +", puoi entrare");
+        }else {
+            System.out.println("Ciao " + nome +", mi dispiace ma il tuo nome non è in lista");
         }
     }
 }
